@@ -1,0 +1,52 @@
+{
+  "name": "Road-Trip",
+  "description": "An Experimental Full-Stack Project",
+  "license": "Unlicense",
+  "version": "0.0.8",
+  "authors": [
+    "Cisco Tetration"
+  ],
+  "dependencies": {
+    "@bower_components/angular": "angular/bower-angular#1.5.11",
+    "@bower_components/angular-bootstrap": "angular-ui/bootstrap-bower#0.14.3",
+    "@bower_components/bootstrap": "twbs/bootstrap#3.4.1",
+    "@bower_components/angular-resource": "angular/bower-angular-resource#1.5.8",
+    "@bower_components/angular-ui-router": "angular-ui/angular-ui-router-bower#0.3.1",
+    "@bower_components/d3": "mbostock-bower/d3-bower#3.4.8",
+    "@rails/webpacker": "^4.2.2",
+    "bootstrap-sass": "3.4.1",
+    "bower-resolve-webpack-plugin": "^1.0.5",
+    "lodash": "^4.17.11",
+    "expose-loader": "^0.7.5",
+    "imports-loader": "^0.8.0",
+    "jquery": "^3.3.1",
+    "jquery-ujs": "^1.2.2",
+    "rails-erb-loader": "^5.5.0",
+    "raw-loader": "^0.5.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.5.11",
+    "jasmine-core": "^3.4.0",
+    "karma": "^4.4.1",
+    "karma-chrome-launcher": "~0.1.4",
+    "karma-cli": "^2.0.0",
+    "karma-commonjs": "0.0.8",
+    "karma-jasmine": "~0.2.0",
+    "karma-junit-reporter": "^1.2.0",
+    "karma-ng-html2js-preprocessor": "~0.1",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "scripts": {
+    "test": "RAILS_ENV=test NODE_ENV=test karma start spec/angular/config/unit.js --single-run",
+    "pretest": "yarn test-compile",
+    "test-watch": "RAILS_ENV=test NODE_ENV=test karma start spec/angular/config/unit.js",
+    "pretest-headless": "yarn test-compile",
+    "test-headless": "RAILS_ENV=test NODE_ENV=test karma start spec/angular/config/unit-headless.js --single-run",
+    "test-compile": "RAILS_ENV=test UNSPLIT_BUNDLE=true bin/webpack spec/angular/unit-main.js -o ./spec/angular/tmp/unit-bundle.js --mode development --devtool eval",
+    "test-compile-watch": "yarn test-compile --watch"
+  },
+  "engines": {
+    "yarn": ">= 1.12.3",
+    "node": ">= 10.15.3 < 11.0.0"
+  }
+}

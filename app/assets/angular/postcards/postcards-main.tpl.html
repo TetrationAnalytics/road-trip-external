@@ -1,0 +1,13 @@
+<div ng-controller="PostcardsCtrl as vm">
+  <h3>Postcards</h3>
+
+  <button type="button" class="btn btn-primary" ng-click="vm.create()">Create</button>
+
+  <ul>
+    <li ng-repeat="postcard in vm.postcards">
+      {{ postcard | json }}
+    </li>
+  </ul>
+</div>
+
+
