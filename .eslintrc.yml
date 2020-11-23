@@ -1,0 +1,44 @@
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaVersion: 2018
+plugins:
+  - jasmine
+  - '@typescript-eslint'
+extends:
+  - plugin:angular/johnpapa
+  - airbnb-base
+  - plugin:jasmine/recommended
+  - prettier
+  - prettier/react 
+
+env:
+  browser: true
+  node: true
+  jasmine: true
+  protractor: true
+globals:
+  angular: true
+  $: true
+  jQuery: true
+  jquery: true
+  specRootRequire: true
+  EC: true
+  inject: true
+rules:
+  no-underscore-dangle: 0
+  no-use-before-define: 0
+  no-param-reassign: 0
+  no-unused-vars: [2, { args: all, argsIgnorePattern: ^_ }]
+  func-names: 0
+  spaced-comment: [error, always, { exceptions: ['/'] }]
+  vars-on-top: 0
+  one-var: 0
+  no-plusplus: 0
+  camelcase: 0
+  angular/controller-name: [2, '/[A-Z].*Ctrl/']
+  angular/file-name: 0
+  angular/function-type: 0
+settings:
+  import/resolver:
+    webpack:
+      config: config/webpack/development.js
