@@ -4,12 +4,19 @@ module Api
       render json: Postcard.all
     end
 
+    def show
+      render json: Postcard.find(params[:id])
+    end
+
     def create
       postcard = Postcard.new(permitted_params)
-      sleep(5) # it takes a long time to send a postcard
       postcard.save!
 
       render json: postcard
+    end
+
+    def by_user
+      render json: Postcard.where(user_id: params[:user_id])
     end
 
     private

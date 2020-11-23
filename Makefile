@@ -2,16 +2,17 @@
 
 install:
 	bundle install
-	yarn
+	yarn install
+	bundle exec rails db:reset
 
 clean:
 	rm -rf vendor/assets/components/*
 	rm -rf tmp/cache/assets/development/*
+	rm -rf node_modules
 
 test:
 	bundle exec rspec -fd
 	yarn run test
 
 run:
-	bundle exec rails db:migrate
 	guard start

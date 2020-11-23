@@ -1,23 +1,13 @@
 'use strict';
 
-(function() {
+(function () {
+  angular.module('header', []).controller('HeaderCtrl', HeaderCtrl);
 
-  angular
-    .module('header', [
-    ])
-    .controller('HeaderCtrl', HeaderCtrl);
-
-  HeaderCtrl.$inject = [
-  ];
+  HeaderCtrl.$inject = [];
 
   function HeaderCtrl() {
-
-
-
     activate();
 
-    function activate() {
-
-    }
+    function activate() {}
   }
 })();

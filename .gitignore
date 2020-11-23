@@ -44,3 +44,6 @@ docs/doc.html
 /node_modules
 yarn-debug.log*
 .yarn-integrity
+
+**.d.ts
+!declarations.d.ts
