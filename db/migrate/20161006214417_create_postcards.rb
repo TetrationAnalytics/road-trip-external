@@ -4,6 +4,7 @@ class CreatePostcards < ActiveRecord::Migration
       t.string :to
       t.string :from
       t.text :message
+
       t.timestamps
     end
   end
