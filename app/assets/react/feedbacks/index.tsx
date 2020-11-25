@@ -1,14 +1,15 @@
 import React, { FC } from 'react';
 import { UIViewInjectedProps } from '@uirouter/react';
-import { RecoilRoot, useRecoilValue, useSetRecoilState } from 'recoil';
+import { RecoilRoot, useRecoilValue, useRecoilState } from 'recoil';
 import { Button, Card } from 'react-bootstrap';
 import get from 'lodash/get';
 import ErrorBoundary from '../common/error';
 
 import {
   currentUserIDState,
-  currentUserFeedbackQuery,
-  allUsersQuery,
+  feedbacksQuery,
+  usersQuery,
+  useRefreshFeedbacks,
 } from './atoms';
 import styles from './styles.module.scss';
 
@@ -18,35 +19,33 @@ type Props = {
 };
 
 const Page: FC<Props> = ({ title, url }) => {
-  const feedbacks = useRecoilValue(currentUserFeedbackQuery);
-  const users = useRecoilValue(allUsersQuery);
-  const setUserId = useSetRecoilState(currentUserIDState);
+  const [userId, setUserId] = useRecoilState(currentUserIDState);
+  const feedbacks = useRecoilValue(feedbacksQuery(userId));
+  const refreshFeedbacks = useRefreshFeedbacks();
+  const users = useRecoilValue(usersQuery);
 
   const UserBtn = (user: any) => (
-    <React.Suspense fallback={<div>Loading...</div>}>
-      <Button
-        key={user.id}
-        variant="outline-secondary"
-        onClick={() => {
-          console.log('user = ', user);
-          setUserId(user.id);
-        }}
-      >
-        {user.first_name} {user.last_name}
-      </Button>
-    </React.Suspense>
+    <Button
+      key={user.id}
+      variant="outline-secondary"
+      cy-tag="user-btn"
+      onClick={() => {
+        setUserId(user.id);
+        refreshFeedbacks();
+      }}
+    >
+      {user.first_name} {user.last_name}
+    </Button>
   );
 
   const FeedbackCard = (feedback: any) => {
     return (
-      <React.Suspense fallback={<div>Loading...</div>}>
-        <Card key={feedback.id} style={{ width: '18rem' }}>
-          <Card.Body>
-            <Card.Title>{feedback.title}</Card.Title>
-            <Card.Text>{feedback.content}</Card.Text>
-          </Card.Body>
-        </Card>
-      </React.Suspense>
+      <Card key={feedback.id} style={{ width: '18rem' }}>
+        <Card.Body>
+          <Card.Title>{feedback.title}</Card.Title>
+          <Card.Text>{feedback.content}</Card.Text>
+        </Card.Body>
+      </Card>
     );
   };
 
@@ -54,8 +53,8 @@ const Page: FC<Props> = ({ title, url }) => {
     <div>
       <h4>{title}</h4>
       <p className={styles.green}>URL: {url}</p>
-      <div>{users.map(UserBtn)}</div>
-      <div>{feedbacks.map(FeedbackCard)}</div>
+      <div id="users-wrap">{users.map(UserBtn)}</div>
+      <div id="feedbacks-wrap">{feedbacks.map(FeedbackCard)}</div>
     </div>
   );
 };
