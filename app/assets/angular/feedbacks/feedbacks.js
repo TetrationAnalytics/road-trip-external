@@ -1,19 +1,19 @@
 import { UI_ROUTER_REACT_HYBRID } from '@uirouter/react-hybrid';
-import Feedback from '../../react/feedback';
+import Feedbacks from '../../react/feedbacks';
 
 angular
-  .module('feedback', ['ui.router', UI_ROUTER_REACT_HYBRID])
+  .module('feedbacks', ['ui.router', UI_ROUTER_REACT_HYBRID])
   .config(config);
 
 config.$inject = ['$stateProvider'];
 
 function config($stateProvider) {
-  $stateProvider.state('urlFeedback', {
-    url: '/feedback',
+  $stateProvider.state('urlFeedbacks', {
+    url: '/feedbacks',
     data: {
-      pageTitle: 'Feedback',
+      pageTitle: 'Feedbacks',
     },
-    component: Feedback,
+    component: Feedbacks,
   });
 }
 Controller.$inject = ['_', '$scope'];

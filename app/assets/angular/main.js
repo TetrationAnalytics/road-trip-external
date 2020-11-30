@@ -12,7 +12,7 @@
       'tourism',
       'postcards',
       'expenses',
-      'feedback',
+      'feedbacks',
     ])
     .run(run)
     .config(httpConfig)
