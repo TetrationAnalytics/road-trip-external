@@ -12,7 +12,7 @@ gem 'bootstrap-sass'
 gem 'uglifier'
 gem 'sqlite3'
 gem 'font-awesome-rails'
-gem 'secure_headers', '~> 6.1.0'
+gem 'secure_headers', '~> 6.3.0'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
