@@ -180,7 +180,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    secure_headers (6.1.2)
+    secure_headers (6.3.0)
     shellany (0.0.1)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
@@ -231,7 +231,7 @@ DEPENDENCIES
   rails (~> 5.2.4, >= 5.0.0.1)
   rspec-rails
   sassc-rails
-  secure_headers (~> 6.1.0)
+  secure_headers (~> 6.3.0)
   spring
   spring-watcher-listen
   sqlite3
