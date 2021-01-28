@@ -27,7 +27,7 @@
     "@uirouter/react-hybrid": "^1.0.2",
     "angular-ui-router": "^1.0.28",
     "axios": "^0.21.0",
-    "bootstrap-sass": "3.4.1",
+    "bootstrap": "^4.6.0",
     "bower-resolve-webpack-plugin": "^1.0.5",
     "classnames": "^2.2.6",
     "eslint-plugin-react": "^7.21.5",
