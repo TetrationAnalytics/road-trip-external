@@ -1,35 +1,32 @@
 <div ng-controller="HeaderCtrl">
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Road Trip</a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li ui-sref-active="active">
-            <a ui-sref="urlTourism">
-              Visitor Stats
-            </a>
-          </li>
-          <li ui-sref-active="active">
-            <a ui-sref="urlPostcards">
-              Postcards
-            </a>
-          </li>
-          <li ui-sref-active="active">
-            <a ui-sref="urlExpenses">
-              Expenses
-            </a>
-          </li>
-          <li ui-sref-active="active">
-            <a ui-sref="urlFeedbacks">
-              Feedback
-            </a>
-          </li>
-        </ul>
-      </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Road Trip</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarRoadTrip"
+      aria-controls="navbarRoadTrip"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarRoadTrip" class="navbar-collapse collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item" ui-sref-active="active">
+          <a class="nav-link" ui-sref="urlTourism"> Visitor Stats </a>
+        </li>
+        <li class="nav-item" ui-sref-active="active">
+          <a class="nav-link" ui-sref="urlPostcards"> Postcards </a>
+        </li>
+        <li class="nav-item" ui-sref-active="active">
+          <a class="nav-link" ui-sref="urlExpenses"> Expenses </a>
+        </li>
+        <li class="nav-item" ui-sref-active="active">
+          <a class="nav-link" ui-sref="urlFeedbacks"> Feedback </a>
+        </li>
+      </ul>
     </div>
   </nav>
 </div>
-
-
