@@ -29,10 +29,10 @@ $ rvm install ruby-2.7.1
 $ brew install nvm
 ```
 
-4. Install node Node (10.15.3) and activate
+4. Install node Node (12.18.4) and activate
 
 ```
-$ nvm install 10.15.3
+$ nvm install
 ```
 
 5. Install bundler
