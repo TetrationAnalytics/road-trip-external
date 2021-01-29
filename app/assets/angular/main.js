@@ -12,7 +12,7 @@
       'tourism',
       'postcards',
       'expenses',
-      'feedbacks',
+      'roadtrip.react',
     ])
     .run(run)
     .config(httpConfig)
