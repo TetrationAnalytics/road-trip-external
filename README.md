@@ -32,7 +32,7 @@ $ brew install nvm
 4. Install node Node (12.18.4) and activate
 
 ```
-$ nvm install 12.18.4
+$ nvm install
 ```
 
 5. Install bundler
