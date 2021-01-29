@@ -1,16 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import { UIViewInjectedProps } from '@uirouter/react';
-import { RecoilRoot, useRecoilValue, useRecoilState } from 'recoil';
 import { Button, Card } from 'react-bootstrap';
+import axios from 'axios';
 import get from 'lodash/get';
-import ErrorBoundary from '../common/error';
-
-import {
-  currentUserIDState,
-  feedbacksQuery,
-  usersQuery,
-  useRefreshFeedbacks,
-} from './atoms';
 import styles from './styles.module.scss';
 
 type Props = {
@@ -18,20 +10,32 @@ type Props = {
   url: string;
 };
 
+const fetchData = async (url: string) => {
+  const { data } = await axios.get(url);
+
+  return data;
+};
+
 const Page: FC<Props> = ({ title, url }) => {
-  const [userId, setUserId] = useRecoilState(currentUserIDState);
-  const feedbacks = useRecoilValue(feedbacksQuery(userId));
-  const refreshFeedbacks = useRefreshFeedbacks();
-  const users = useRecoilValue(usersQuery);
+  const [users, setUsers] = useState([]);
+  const [feedbacks, setFeedbacks] = useState([]);
+
+  useEffect(() => {
+    fetchData('/api/users').then((data) => {
+      setUsers(data);
+    });
+  }, []);
 
   const UserBtn = (user: any) => (
     <Button
       key={user.id}
       variant="outline-secondary"
       cy-tag="user-btn"
-      onClick={() => {
-        setUserId(user.id);
-        refreshFeedbacks();
+      onClick={async () => {
+        const feedbacks = await fetchData(
+          `/api/feedbacks/by_user?user_id=${user.id}`
+        );
+        setFeedbacks(feedbacks);
       }}
     >
       {user.first_name} {user.last_name}
@@ -62,15 +66,7 @@ const Page: FC<Props> = ({ title, url }) => {
 const App = ({ transition }: UIViewInjectedProps) => {
   const title = get(transition, 'router.stateService.current.data.pageTitle');
   const url = get(transition, 'router.stateService.current.url');
-  return (
-    <RecoilRoot>
-      <ErrorBoundary>
-        <React.Suspense fallback={<div>Loading...</div>}>
-          <Page title={title} url={url} />
-        </React.Suspense>
-      </ErrorBoundary>
-    </RecoilRoot>
-  );
+  return <Page title={title} url={url} />;
 };
 
 export default App;
