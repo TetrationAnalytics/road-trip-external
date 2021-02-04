@@ -4,7 +4,9 @@ type ReducerFunc = (state: State, action: Action) => State;
 
 const debug = true;
 
-export const initialState = {} as any;
+export const initialState = {
+	someKey: ''
+};
 
 export type State = typeof initialState;
 
@@ -13,7 +15,7 @@ export function reducer(state: State, action: Action): State {
 
 	switch (type) {
 		case 'some_action':
-			return { ...state, payload };
+			return { ...state, someKey: payload };
 		default:
 			throw new Error(`Unhandled action type: ${type}`);
 	}
