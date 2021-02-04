@@ -23,8 +23,13 @@ postcards = [
 Postcard.create(postcards)
 
 feedbacks = [
-	{ title: "Fun place!", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis auctor elit sed vulputate.", user_id: users[0].id },
-	{ title: "Will come back", content: "Vel fringilla est ullamcorper eget nulla. Auctor urna nunc id cursus metus aliquam. Ultrices sagittis orci a scelerisque purus semper eget. Amet justo donec enim diam vulputate ut pharetra. Justo donec enim diam vulputate ut pharetra.", user_id: users[2].id }
+	{ title: "Fun place 1", content: "11 Lorem ipsum dolor sit amet, consectetur adipiscing elit.", user_id: users[0].id },
+	{ title: "Fun place 2", content: "22 Lorem ipsum dolor sit amet, consectetur adipiscing elit.", user_id: users[0].id },
+	{ title: "Fun place 3", content: "33 Lorem ipsum dolor sit amet, consectetur adipiscing elit.", user_id: users[0].id },
+	{ title: "Fun place 4", content: "44 Lorem ipsum dolor sit amet, consectetur adipiscing elit.", user_id: users[0].id },
+	{ title: "Fun place 5", content: "55 Lorem ipsum dolor sit amet, consectetur adipiscing elit.", user_id: users[0].id },
+	{ title: "Fun place 6", content: "66 Lorem ipsum dolor sit amet, consectetur adipiscing elit.", user_id: users[2].id },
+	{ title: "Fun place 7", content: "77 Lorem ipsum dolor sit amet, consectetur adipiscing elit.", user_id: users[2].id },
 ]
 
 Feedback.create(feedbacks)
