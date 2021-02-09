@@ -49,20 +49,26 @@ $ make install
 
 # Verify Your Setup
 
-1. Run
+1. Run the tests and make sure both Karma and Rspec test cases are passing
 
 ```
 $ make test
 ```
 
-2. Make sure both Karma and Rspec test cases pass
-
 # Start The App
 
-1. Run
+By default rails server will listen on port 4000:
 
-```
-$ make run
-```
+    $ make run
+
+To provide a different port:
+
+    $ PORT=5000 make run
+
+To start incremental asset compilation and auto-reload via webpack-dev-server, in a separate
+terminal run:
+
+    $ bin/webpack-dev-server
+
 
 2. Go to `http://localhost:4000`
