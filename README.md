@@ -4,7 +4,7 @@ This project provides a reference solution for paired programming interviews.
 
 # Preliminary Installations
 
-Ruby and Node.js are required. Versions are listed in `.ruby-version` and `.nvmrc` respectively.
+Ruby and Node.js are required and managed via rvm and nvm. Versions are listed in `.ruby-version` and `.nvmrc` respectively.
 
 1. Please install RVM as described here:
 
