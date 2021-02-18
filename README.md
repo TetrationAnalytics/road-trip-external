@@ -25,7 +25,7 @@ $ rvm install ruby-2.7.1
 
 3. Install Node Version Manager `nvm`
 
-On macOS:
+On macOS via Homebrew:
 
 ```
 $ brew install nvm
