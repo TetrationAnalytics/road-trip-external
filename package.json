@@ -92,7 +92,8 @@
     "jest": "RAILS_ENV=test NODE_ENV=test jest",
     "jest:watch": "RAILS_ENV=test NODE_ENV=test jest --watch",
     "cy:run": "cypress run",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "format": "prettier --write app/assets/**/*.{js,ts,tsx}"
   },
   "engines": {
     "yarn": ">= 1.21.1 ",
