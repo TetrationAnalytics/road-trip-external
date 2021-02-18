@@ -4,7 +4,7 @@ This project provides a reference solution for paired programming interviews.
 
 # Preliminary Installations
 
-Rvm-based ruby and legacy version of node.js are required:
+Ruby and Node.js are required. Versions are listed in `.ruby-version` and `.nvmrc` respectively.
 
 1. Please install RVM as described here:
 
@@ -25,9 +25,13 @@ $ rvm install ruby-2.7.1
 
 3. Install Node Version Manager `nvm`
 
+On macOS:
+
 ```
 $ brew install nvm
 ```
+
+Alternative install instructions for macOS, Linux, and Windows (WSL) available on [the nvm repo](https://github.com/nvm-sh/nvm#install-script).
 
 4. Install node Node (12.18.4) and activate
 
