@@ -33,6 +33,7 @@ default: &default
   extensions:
     - .tsx
     - .ts
+    - .jsx
     - .mjs
     - .js
     - .sass
@@ -73,7 +74,6 @@ development:
       'Content-Security-Policy': "script-src 'self' 'unsafe-eval'; connect-src 'self' ws://localhost:3037 http://localhost:3037"
     watch_options:
       ignored: '**/node_modules/**'
-
 
 test:
   <<: *default

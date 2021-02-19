@@ -30,6 +30,7 @@
     "bootstrap": "^4.6.0",
     "bower-resolve-webpack-plugin": "^1.0.5",
     "classnames": "^2.2.6",
+    "core-js": "3",
     "eslint-plugin-react": "^7.21.5",
     "expose-loader": "^0.7.5",
     "imports-loader": "^0.8.0",
@@ -92,7 +93,8 @@
     "jest": "RAILS_ENV=test NODE_ENV=test jest",
     "jest:watch": "RAILS_ENV=test NODE_ENV=test jest --watch",
     "cy:run": "cypress run",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "format": "prettier --write app/assets/**/*.{js,ts,tsx}"
   },
   "engines": {
     "yarn": ">= 1.21.1 ",
