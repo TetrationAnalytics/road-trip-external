@@ -37,7 +37,7 @@
     "jquery": "^3.3.1",
     "jquery-ujs": "^1.2.2",
     "lodash": "^4.17.11",
-    "moment": "^2.29.1",
+    "moment": "^2.29.4",
     "rails-erb-loader": "^5.5.0",
     "raw-loader": "^0.5.1",
     "react": "16.14.0",
